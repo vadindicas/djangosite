@@ -1,0 +1,22 @@
+{% load static %}
+<h1>Добавить студента</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" required name="first_name" placeholder="Имя">
+    <input type="text" required name="last_name" placeholder="Фамилия">
+    <input type="text" required name="middle_name" placeholder="Отчество">
+    <select name="group">
+        <option value="115">115</option>
+        <option value="215">215</option>
+        <option value="315">315</option>
+    </select>
+    <input type="text" required name="year" placeholder="Год поступления">
+     <select name="form_training">
+        <option value="дневная">дневная</option>
+        <option value="вечерняя">вечерняя</option>
+        <option value="заочная">заочная</option>
+    </select>
+    <input name="submit" type="submit">
+</form>
+<a href="/students/">Все студенты</a>

@@ -1,0 +1,36 @@
+{% load static %}
+<h1>Студенты</h1>
+<table>
+{% for item in data %}
+
+    <tr>
+        <td>Имя: {{ item.first_name }}</td>
+        <td>Фамилия : {{ item.last_name }}</td>
+        <td>Отчество : {{ item.middle_name }}</td>
+        <td>Год/Семестр : {{ item.year }}</td>
+        <td>Форма обучения : {{ item.form_training }}</td>
+        <td>Группа : {{ item.group }}</td>
+        <td class="red"><a href="?delete={{ item.student_id }}">Удалить?</a></td>
+        <td class="green"><a href="?edit={{ item.student_id }}">Изменить?</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<style>
+    td {
+    border: 1px solid #e9e9e9;
+    padding: 20px;
+}
+.red {
+    background: red;
+    color: #fff;
+    cursor:pointer;
+}
+
+.green {
+    background: #1eff60;
+    color: #fff;
+    cursor:pointer;
+}
+</style>
